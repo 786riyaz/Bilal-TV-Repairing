@@ -1,0 +1,2424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Pro Repair | Complete Responsive Website</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-light: #3b82f6;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --danger: #ef4444;
+            --dark: #111827;
+            --dark-light: #1f2937;
+            --light: #f9fafb;
+            --gray: #9ca3af;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --gradient-primary: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+            --gradient-accent: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+            --gradient-dark: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #374151;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        @media (max-width: 992px) {
+            .section-padding {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 50px 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-padding {
+                padding: 40px 0;
+            }
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 8px 0;
+            font-size: 0.9rem;
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .top-bar-left,
+        .top-bar-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .top-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255, 255, 255, 0.9);
+            white-space: nowrap;
+        }
+
+        .top-bar-item i {
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 992px) {
+            .top-bar {
+                padding: 6px 0;
+                font-size: 0.8rem;
+            }
+
+            .top-bar-content {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .top-bar-left,
+            .top-bar-right {
+                justify-content: center;
+                width: 100%;
+                margin: 2px 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .top-bar {
+                display: none;
+            }
+        }
+
+        /* Main Header */
+        .main-header {
+            background: white;
+            box-shadow: var(--shadow-md);
+            position: sticky;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .main-header.scrolled {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 0;
+        }
+
+        /* Logo */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            z-index: 1001;
+            flex-shrink: 0;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-title {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--dark);
+            line-height: 1;
+        }
+
+        .logo-subtitle {
+            font-size: 0.75rem;
+            color: var(--gray);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 768px) {
+            .logo-title {
+                font-size: 1.3rem;
+            }
+
+            .logo-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logo-title {
+                font-size: 1.2rem;
+            }
+
+            .logo-icon {
+                width: 30px;
+                height: 30px;
+                font-size: 1.2rem;
+            }
+
+            .logo-subtitle {
+                font-size: 0.65rem;
+            }
+        }
+
+        /* Search Bar */
+        .search-container {
+            flex: 1;
+            max-width: 500px;
+            margin: 0 30px;
+            position: relative;
+        }
+
+        .search-box {
+            display: flex;
+            background: #f3f4f6;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .search-box:focus-within {
+            border-color: var(--primary);
+            background: white;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .search-input {
+            flex: 1;
+            border: none;
+            background: transparent;
+            padding: 12px 20px;
+            font-size: 0.95rem;
+            color: var(--dark);
+            width: 100%;
+        }
+
+        .search-input:focus {
+            outline: none;
+        }
+
+        .search-category {
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            background: white;
+            border-left: 1px solid #e5e7eb;
+            cursor: pointer;
+            position: relative;
+            min-width: 140px;
+        }
+
+        .search-category span {
+            font-size: 0.9rem;
+            color: var(--dark);
+            margin-right: 8px;
+            white-space: nowrap;
+        }
+
+        .category-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow-lg);
+            padding: 10px 0;
+            display: none;
+            z-index: 100;
+        }
+
+        .search-category:hover .category-dropdown {
+            display: block;
+        }
+
+        .category-item {
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .category-item:hover {
+            background: #f3f4f6;
+            color: var(--primary);
+        }
+
+        .search-button {
+            background: var(--gradient-primary);
+            border: none;
+            color: white;
+            padding: 0 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 50px;
+        }
+
+        .search-button:hover {
+            background: var(--primary-dark);
+        }
+
+        @media (max-width: 1200px) {
+            .search-container {
+                max-width: 400px;
+                margin: 0 20px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .search-container {
+                display: none;
+            }
+        }
+
+        /* Header Actions */
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-shrink: 0;
+        }
+
+        .action-item {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .action-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f3f4f6;
+            color: var(--dark);
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .action-icon:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: var(--danger);
+            color: white;
+            font-size: 0.7rem;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .action-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-left: 10px;
+        }
+
+        .action-title {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .action-subtitle {
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+
+        @media (max-width: 768px) {
+            .action-text {
+                display: none;
+            }
+
+            .header-actions {
+                gap: 10px;
+            }
+
+            .action-icon {
+                width: 35px;
+                height: 35px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-actions {
+                gap: 8px;
+            }
+
+            .action-icon {
+                width: 32px;
+                height: 32px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* User Menu */
+        .user-menu {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 15px;
+            background: #f3f4f6;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .user-menu:hover {
+            background: #e5e7eb;
+        }
+
+        .user-avatar {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .user-name {
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--dark);
+            white-space: nowrap;
+        }
+
+        .user-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 200px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow-lg);
+            padding: 10px 0;
+            margin-top: 10px;
+            display: none;
+            z-index: 100;
+        }
+
+        .user-menu:hover .user-dropdown {
+            display: block;
+        }
+
+        .user-dropdown-item {
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--dark);
+            text-decoration: none;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .user-dropdown-item:hover {
+            background: #f3f4f6;
+            color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .user-name {
+                display: none;
+            }
+
+            .user-menu {
+                padding: 8px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .user-menu {
+                display: none;
+            }
+        }
+
+        /* CTA Button */
+        .cta-button {
+            background: var(--gradient-accent);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 10px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(245, 158, 11, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .cta-button {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .cta-button {
+                padding: 10px 15px;
+            }
+
+            .cta-button span {
+                display: none;
+            }
+
+            .cta-button i {
+                margin: 0;
+            }
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001;
+        }
+
+        .mobile-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--dark);
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        @media (max-width: 992px) {
+            .mobile-toggle {
+                display: flex;
+            }
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 300px;
+            height: 100vh;
+            background: white;
+            box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: right 0.3s ease;
+            z-index: 1100;
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .mobile-close {
+            background: #f3f4f6;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .mobile-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mobile-nav-item {
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .mobile-nav-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 0;
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            width: 100%;
+        }
+
+        .mobile-nav-link.active {
+            color: var(--primary);
+        }
+
+        .mobile-search {
+            margin-bottom: 20px;
+        }
+
+        .mobile-search-box {
+            display: flex;
+            background: #f3f4f6;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .mobile-search-input {
+            flex: 1;
+            border: none;
+            background: transparent;
+            padding: 12px 15px;
+            font-size: 0.95rem;
+            width: 100%;
+        }
+
+        .mobile-search-button {
+            background: var(--gradient-primary);
+            border: none;
+            color: white;
+            padding: 0 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 50px;
+        }
+
+        @media (max-width: 480px) {
+            .mobile-menu {
+                width: 100%;
+                padding: 15px;
+            }
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 120px 0 80px;
+            background: var(--gradient-dark);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            opacity: 0.2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .badge-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+
+        .hero-image {
+            position: relative;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-section {
+                padding: 100px 0 60px;
+                text-align: center;
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-badges {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 80px 0 50px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-badges {
+                margin-top: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-section {
+                padding: 60px 0 40px;
+            }
+
+            .hero-title {
+                font-size: 1.8rem;
+                margin-bottom: 15px;
+            }
+
+            .hero-subtitle {
+                font-size: 0.95rem;
+                margin-bottom: 20px;
+            }
+
+            .badge-item {
+                padding: 8px 15px;
+                font-size: 0.8rem;
+            }
+
+            .hero-badges {
+                gap: 10px;
+                margin-top: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.6rem;
+            }
+
+            .hero-badges {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Services Section */
+        .services-section {
+            background: white;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+            color: var(--dark);
+        }
+
+        .section-subtitle {
+            color: var(--gray);
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 60px;
+            font-size: 1.1rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s;
+            height: 100%;
+            border: 1px solid #e5e7eb;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-light);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            margin: 0 auto 25px;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        @media (max-width: 1200px) {
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+                margin-bottom: 40px;
+                padding: 0 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .service-card {
+                padding: 25px;
+            }
+
+            .service-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 1.8rem;
+            }
+
+            .service-title {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .section-subtitle {
+                font-size: 0.95rem;
+                margin-bottom: 30px;
+            }
+
+            .service-card {
+                padding: 20px;
+            }
+
+            .service-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.6rem;
+                margin-bottom: 20px;
+            }
+
+            .service-title {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .service-card {
+                padding: 15px;
+            }
+        }
+
+        /* Brands Section */
+        .brands-section {
+            background: #f9fafb;
+        }
+
+        .brand-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .brand-item {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            height: 100%;
+            min-height: 80px;
+        }
+
+        .brand-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary);
+        }
+
+        .brand-logo {
+            max-height: 40px;
+            max-width: 100%;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s;
+            width: auto;
+            height: auto;
+        }
+
+        .brand-item:hover .brand-logo {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        @media (max-width: 992px) {
+            .brand-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .brand-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 15px;
+                margin-top: 40px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .brand-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+                margin-top: 30px;
+            }
+
+            .brand-item {
+                padding: 15px;
+                min-height: 70px;
+            }
+
+            .brand-logo {
+                max-height: 30px;
+            }
+        }
+
+        /* Testimonials */
+        .testimonial-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow-md);
+            height: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--primary);
+            opacity: 0.2;
+            font-family: serif;
+        }
+
+        .testimonial-rating {
+            color: #ffc107;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 25px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+            border: 3px solid var(--primary-light);
+            flex-shrink: 0;
+        }
+
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .testimonial-card {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .testimonial-card {
+                padding: 20px;
+            }
+
+            .testimonial-card:before {
+                top: 15px;
+                left: 15px;
+                font-size: 3rem;
+            }
+
+            .author-avatar {
+                width: 45px;
+                height: 45px;
+                margin-right: 10px;
+            }
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: white;
+        }
+
+        .contact-form {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: var(--shadow-md);
+            width: 100%;
+        }
+
+        .form-control {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            color: var(--dark);
+            padding: 12px 15px;
+            border-radius: 8px;
+            transition: all 0.3s;
+            width: 100%;
+            font-size: 1rem;
+        }
+
+        .form-control:focus {
+            background: white;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .contact-info {
+            padding-left: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: white;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 1200px) {
+            .contact-form {
+                padding: 35px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .contact-info {
+                padding-left: 0;
+                margin-top: 40px;
+            }
+
+            .contact-form {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-form {
+                padding: 25px;
+            }
+
+            .contact-item {
+                flex-direction: row;
+                text-align: left;
+                align-items: flex-start;
+            }
+
+            .contact-icon {
+                margin-right: 15px;
+                margin-bottom: 0;
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .contact-form {
+                padding: 20px;
+            }
+
+            .contact-item {
+                flex-direction: row;
+                margin-bottom: 20px;
+            }
+
+            .contact-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
+                margin-right: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-form {
+                padding: 15px;
+            }
+
+            .form-control {
+                padding: 10px 12px;
+                font-size: 0.95rem;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+
+            .contact-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-logo {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: white;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .footer-links h5 {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-links h5:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+            flex-shrink: 0;
+        }
+
+        .social-link:hover {
+            background: var(--gradient-primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            margin-top: 60px;
+            text-align: center;
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 992px) {
+            .footer {
+                padding: 50px 0 25px;
+            }
+
+            .footer-logo {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer {
+                padding: 40px 0 20px;
+            }
+
+            .footer-logo {
+                font-size: 1.5rem;
+            }
+
+            .footer-links h5 {
+                margin-top: 30px;
+                margin-bottom: 20px;
+            }
+
+            .social-links {
+                margin-top: 20px;
+            }
+
+            .social-link {
+                width: 40px;
+                height: 40px;
+            }
+
+            .copyright {
+                margin-top: 40px;
+                padding-top: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer {
+                padding: 30px 0 15px;
+            }
+
+            .footer-logo {
+                font-size: 1.3rem;
+                margin-bottom: 15px;
+            }
+
+            .footer-links h5 {
+                font-size: 1.1rem;
+                margin-bottom: 15px;
+            }
+
+            .footer-links li {
+                margin-bottom: 8px;
+            }
+
+            .social-link {
+                width: 35px;
+                height: 35px;
+                font-size: 0.9rem;
+            }
+
+            .copyright {
+                margin-top: 30px;
+                padding-top: 15px;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Utility Classes */
+        .btn-primary {
+            background: var(--gradient-primary);
+            border: none;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+            color: white;
+        }
+
+        .btn-accent {
+            background: var(--gradient-accent);
+            border: none;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-accent:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
+            color: white;
+        }
+
+        .mb-30 {
+            margin-bottom: 30px;
+        }
+
+        .mb-40 {
+            margin-bottom: 40px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Override Bootstrap for better mobile */
+        .container {
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        .row {
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+        .row>* {
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding-right: 12px;
+                padding-left: 12px;
+            }
+
+            .row {
+                margin-right: -12px;
+                margin-left: -12px;
+            }
+
+            .row>* {
+                padding-right: 12px;
+                padding-left: 12px;
+            }
+
+            .btn-primary,
+            .btn-accent {
+                padding: 10px 20px;
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding-right: 10px;
+                padding-left: 10px;
+            }
+
+            .row {
+                margin-right: -10px;
+                margin-left: -10px;
+            }
+
+            .row>* {
+                padding-right: 10px;
+                padding-left: 10px;
+            }
+        }
+
+        /* Backdrop for mobile menu */
+        .mobile-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1099;
+            display: none;
+        }
+
+        .mobile-backdrop.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Mobile Menu Backdrop -->
+    <div class="mobile-backdrop" id="mobileBackdrop"></div>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="top-bar-left">
+                    <div class="top-bar-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>Call Now: 1-800-123-4567</span>
+                    </div>
+                    <div class="top-bar-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Service Areas: Nationwide</span>
+                    </div>
+                </div>
+                <div class="top-bar-right">
+                    <div class="top-bar-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Mon-Sat: 8AM-8PM, Sun: 9AM-5PM</span>
+                    </div>
+                    <div class="top-bar-item">
+                        <i class="fas fa-truck"></i>
+                        <span>Same Day Service Available</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-container">
+                <!-- Logo -->
+                <a href="#" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-tv"></i>
+                    </div>
+                    <div class="logo-text">
+                        <div class="logo-title">TV Pro Repair</div>
+                        <div class="logo-subtitle">Premium Service</div>
+                    </div>
+                </a>
+
+                <!-- Search Bar (Desktop) -->
+                <div class="search-container d-none d-lg-block">
+                    <div class="search-box">
+                        <input type="text" class="search-input" placeholder="Search for TV parts, services...">
+                        <div class="search-category">
+                            <span>All Categories</span>
+                            <i class="fas fa-chevron-down"></i>
+                            <div class="category-dropdown">
+                                <div class="category-item">TV Screens</div>
+                                <div class="category-item">Power Boards</div>
+                                <div class="category-item">Audio Systems</div>
+                                <div class="category-item">Remote Controls</div>
+                                <div class="category-item">Mounting Kits</div>
+                                <div class="category-item">Cables & Adapters</div>
+                            </div>
+                        </div>
+                        <button class="search-button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Header Actions -->
+                <div class="header-actions">
+                    <!-- Wishlist -->
+                    <div class="action-item d-none d-md-block">
+                        <div class="action-icon">
+                            <i class="far fa-heart"></i>
+                        </div>
+                    </div>
+
+                    <!-- Cart -->
+                    <div class="action-item">
+                        <div class="action-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="badge">3</span>
+                        </div>
+                    </div>
+
+                    <!-- User Account -->
+                    <div class="user-menu d-none d-md-flex">
+                        <div class="user-avatar">JS</div>
+                        <div class="user-name">John Smith</div>
+                        <i class="fas fa-chevron-down"></i>
+                        <div class="user-dropdown">
+                            <a href="#" class="user-dropdown-item">
+                                <i class="fas fa-user"></i>
+                                <span>My Account</span>
+                            </a>
+                            <a href="#" class="user-dropdown-item">
+                                <i class="fas fa-tools"></i>
+                                <span>My Repairs</span>
+                            </a>
+                            <a href="#" class="user-dropdown-item">
+                                <i class="fas fa-receipt"></i>
+                                <span>Invoices</span>
+                            </a>
+                            <a href="#" class="user-dropdown-item">
+                                <i class="fas fa-cog"></i>
+                                <span>Settings</span>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="user-dropdown-item">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Logout</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <button class="cta-button">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Book Service</span>
+                    </button>
+
+                    <!-- Mobile Menu Toggle -->
+                    <div class="mobile-toggle" id="mobileToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-tv"></i>
+                </div>
+                <div class="logo-text">
+                    <div class="logo-title">TV Pro Repair</div>
+                    <div class="logo-subtitle">Premium Service</div>
+                </div>
+            </div>
+            <button class="mobile-close" id="mobileClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Search -->
+        <div class="mobile-search mb-4">
+            <div class="mobile-search-box">
+                <input type="text" class="mobile-search-input" placeholder="Search...">
+                <button class="mobile-search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+
+        <ul class="mobile-nav">
+            <li class="mobile-nav-item">
+                <a href="#home" class="mobile-nav-link active">
+                    <span><i class="fas fa-home me-2"></i> Home</span>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="#services" class="mobile-nav-link">
+                    <span><i class="fas fa-tools me-2"></i> Services</span>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="#brands" class="mobile-nav-link">
+                    <span><i class="fas fa-tags me-2"></i> Brands</span>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="#testimonials" class="mobile-nav-link">
+                    <span><i class="fas fa-star me-2"></i> Testimonials</span>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="#contact" class="mobile-nav-link">
+                    <span><i class="fas fa-envelope me-2"></i> Contact</span>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link">
+                    <span><i class="fas fa-info-circle me-2"></i> About Us</span>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </li>
+        </ul>
+
+        <div class="mt-4">
+            <button class="cta-button w-100">
+                <i class="fas fa-calendar-check"></i>
+                <span>Book Service Now</span>
+            </button>
+        </div>
+
+        <div class="mt-4">
+            <div class="top-bar-item">
+                <i class="fas fa-phone-alt"></i>
+                <span>Call: 1-800-123-4567</span>
+            </div>
+            <div class="top-bar-item mt-2">
+                <i class="fas fa-clock"></i>
+                <span>Mon-Sat: 8AM-8PM</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Expert TV Repair Services</h1>
+                        <p class="hero-subtitle">Professional repair services for all TV brands and models. Same-day
+                            service with 1-year warranty on all repairs. Certified technicians with 10+ years of
+                            experience.</p>
+                        <div class="d-flex flex-wrap gap-3 mb-4">
+                            <a href="#contact" class="btn btn-primary">
+                                <i class="fas fa-calendar-check me-2"></i> Schedule Repair
+                            </a>
+                            <a href="#services" class="btn btn-accent">
+                                <i class="fas fa-play-circle me-2"></i> View Services
+                            </a>
+                        </div>
+                        <div class="hero-badges">
+                            <div class="badge-item">
+                                <i class="fas fa-clock text-warning"></i> Same-Day Service
+                            </div>
+                            <div class="badge-item">
+                                <i class="fas fa-shield-alt text-success"></i> 1-Year Warranty
+                            </div>
+                            <div class="badge-item">
+                                <i class="fas fa-home text-info"></i> At-Home Service
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="hero-image text-center">
+                        <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="TV Repair" class="img-fluid rounded-lg shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section section-padding" id="services">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Our TV Repair Services</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Comprehensive repair solutions for all
+                types of TV issues</p>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-tv"></i>
+                        </div>
+                        <h3 class="service-title">Screen Replacement</h3>
+                        <p>Professional screen replacement for LED, LCD, OLED, and QLED displays with precision tools
+                            and high-quality parts.</p>
+                        <div class="mt-4">
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3 class="service-title">Power Supply Repair</h3>
+                        <p>Diagnosis and repair of power supply issues, capacitor replacement, and voltage regulation
+                            for all TV models.</p>
+                        <div class="mt-4">
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-volume-up"></i>
+                        </div>
+                        <h3 class="service-title">Audio System Repair</h3>
+                        <p>Speaker replacement, audio board repair, and sound system calibration for optimal audio
+                            quality.</p>
+                        <div class="mt-4">
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-satellite-dish"></i>
+                        </div>
+                        <h3 class="service-title">Connectivity Issues</h3>
+                        <p>HDMI port repair, wireless module replacement, and connectivity solutions for seamless device
+                            integration.</p>
+                        <div class="mt-4">
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <h3 class="service-title">Board-Level Repair</h3>
+                        <p>Microscopic board-level repair including BGA reballing, trace repair, and component-level
+                            diagnostics.</p>
+                        <div class="mt-4">
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3 class="service-title">Smart TV Optimization</h3>
+                        <p>Smart TV OS optimization, firmware updates, and performance tuning for all major platforms.
+                        </p>
+                        <div class="mt-4">
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section class="brands-section section-padding" id="brands">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Brands We Repair</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">We service all major TV brands with
+                genuine parts and manufacturer-trained expertise</p>
+
+            <div class="brand-grid">
+                <div class="brand-item" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Samsung"
+                        class="brand-logo">
+                </div>
+                <div class="brand-item" data-aos="zoom-in" data-aos-delay="150">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/LG_logo_%282017%29.svg" alt="LG"
+                        class="brand-logo">
+                </div>
+                <div class="brand-item" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Sony_logo.svg" alt="Sony"
+                        class="brand-logo">
+                </div>
+                <div class="brand-item" data-aos="zoom-in" data-aos-delay="250">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/TCL_logo.svg" alt="TCL"
+                        class="brand-logo">
+                </div>
+                <div class="brand-item" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/VIZIO_Logo.svg" alt="Vizio"
+                        class="brand-logo">
+                </div>
+                <div class="brand-item" data-aos="zoom-in" data-aos-delay="350">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Hisense_logo.svg" alt="Hisense"
+                        class="brand-logo">
+                </div>
+                <div class="brand-item" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Panasonic_logo_%282008%29.svg"
+                        alt="Panasonic" class="brand-logo">
+                </div>
+                <div class="brand-item" data-aos="zoom-in" data-aos-delay="450">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/Sharp_logo_2013.svg" alt="Sharp"
+                        class="brand-logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section-padding" id="testimonials">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Customer Testimonials</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">See what our customers say about our
+                repair services</p>
+
+            <div class="row g-4">
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="mb-3">"My 75-inch Samsung QLED had backlight issues. The technician arrived on time,
+                            diagnosed the problem quickly, and fixed it within 2 hours. Excellent service!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer">
+                            </div>
+                            <div>
+                                <h5 class="mb-0">Michael Rodriguez</h5>
+                                <p class="text-muted">Samsung QN85Q900T</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="mb-3">"HDMI ports stopped working on my LG OLED. They came to my home, replaced the
+                            ports, and had my TV working perfectly. Professional and affordable!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Customer">
+                            </div>
+                            <div>
+                                <h5 class="mb-0">Sarah Johnson</h5>
+                                <p class="text-muted">LG OLED65C1</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="mb-3">"Fast, reliable, and professional. Fixed my Sony Bravia's power issue the same
+                            day I called. The 1-year warranty gives me peace of mind. Highly recommend!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Customer">
+                            </div>
+                            <div>
+                                <h5 class="mb-0">David Chen</h5>
+                                <p class="text-muted">Sony XR-65A90J</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section section-padding" id="contact">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Contact Us</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Schedule a repair or get a free
+                diagnostic assessment</p>
+
+            <div class="row">
+                <div class="col-lg-7" data-aos="fade-right" data-aos-delay="200">
+                    <div class="contact-form">
+                        <h3 class="mb-4">Book a Service Appointment</h3>
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" class="form-control" placeholder="Your Name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="tel" class="form-control" placeholder="Phone Number" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="Email Address">
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="TV Brand & Model">
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="4"
+                                    placeholder="Describe the problem with your TV..."></textarea>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Schedule Repair</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-lg-5" data-aos="fade-left" data-aos-delay="300">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h5>Service Areas</h5>
+                                <p>Serving all major metro areas with mobile repair vans equipped with full workshop
+                                    capabilities.</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h5>Contact Numbers</h5>
+                                <p>Main: <a href="tel:+18005559876" class="text-decoration-none">1-800-555-9876</a><br>
+                                    Emergency: <a href="tel:+14155551234" class="text-decoration-none">(415)
+                                        555-1234</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h5>Service Hours</h5>
+                                <p>Mon-Fri: 7:00 AM - 9:00 PM<br>
+                                    Saturday: 8:00 AM - 6:00 PM<br>
+                                    Sunday: 9:00 AM - 4:00 PM</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div>
+                                <h5>Warranty & Guarantee</h5>
+                                <p>All repairs include a comprehensive 1-year warranty on both parts and labor. 100%
+                                    satisfaction guaranteed.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <a href="#" class="footer-logo"><i class="fas fa-tv me-2"></i>TV Pro Repair</a>
+                    <p class="mt-3 mb-4">Professional TV repair services with certified technicians, same-day service,
+                        and a comprehensive 1-year warranty on all repairs.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 mb-5 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Services</h5>
+                        <ul>
+                            <li><a href="#services">Screen Repair</a></li>
+                            <li><a href="#services">Power Systems</a></li>
+                            <li><a href="#services">Audio Repair</a></li>
+                            <li><a href="#services">Connectivity</a></li>
+                            <li><a href="#services">Board Repair</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 mb-5 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Company</h5>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#brands">Brands</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4">
+                    <div class="footer-links">
+                        <h5>Subscribe</h5>
+                        <p class="mb-3">Get maintenance tips and exclusive offers in your inbox.</p>
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Your email">
+                            <button class="btn btn-primary" type="button">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2023 TV Pro Repair. All rights reserved. | <a href="#" class="text-decoration-none">Privacy
+                        Policy</a> | <a href="#" class="text-decoration-none">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Custom JS -->
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100,
+            disable: window.innerWidth < 768 // Disable animations on mobile for better performance
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('.main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu functionality
+        const mobileToggle = document.getElementById('mobileToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileClose = document.getElementById('mobileClose');
+        const mobileBackdrop = document.getElementById('mobileBackdrop');
+
+        function openMobileMenu() {
+            mobileMenu.classList.add('active');
+            mobileBackdrop.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            document.body.style.position = 'fixed';
+            document.body.style.width = '100%';
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('active');
+            mobileBackdrop.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            document.body.style.position = 'static';
+        }
+
+        mobileToggle.addEventListener('click', openMobileMenu);
+        mobileClose.addEventListener('click', closeMobileMenu);
+        mobileBackdrop.addEventListener('click', closeMobileMenu);
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        // Close mobile menu when pressing Escape key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                closeMobileMenu();
+            }
+        });
+
+        // Form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Get form values
+            const name = this.querySelector('input[type="text"]').value;
+            const phone = this.querySelector('input[type="tel"]').value;
+
+            // Simple validation
+            if (!name || !phone) {
+                alert('Please fill in all required fields');
+                return;
+            }
+
+            // Show success message
+            alert(`Thank you ${name}! Your repair request has been submitted. We will call you at ${phone} within 30 minutes to schedule your appointment.`);
+
+            // Reset form
+            this.reset();
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    closeMobileMenu();
+
+                    // Calculate header height for offset
+                    const headerHeight = document.querySelector('.main-header').offsetHeight;
+
+                    window.scrollTo({
+                        top: targetElement.offsetTop - headerHeight - 20,
+                        behavior: 'smooth'
+                    });
+
+                    // Update active nav link in mobile menu
+                    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === targetId) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        });
+
+        // Search functionality
+        const searchButtons = document.querySelectorAll('.search-button, .mobile-search-button');
+        searchButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const searchInput = this.parentElement.querySelector('input[type="text"]');
+                if (searchInput.value.trim()) {
+                    alert(`Searching for: ${searchInput.value}`);
+                    // In a real implementation, you would submit the search form here
+                } else {
+                    alert('Please enter a search term');
+                }
+            });
+        });
+
+        // Category dropdown functionality
+        const categoryToggle = document.querySelector('.search-category');
+        if (categoryToggle) {
+            const categoryDropdown = document.querySelector('.category-dropdown');
+            const categoryItems = document.querySelectorAll('.category-item');
+
+            categoryToggle.addEventListener('click', function (e) {
+                e.stopPropagation();
+                categoryDropdown.style.display = categoryDropdown.style.display === 'block' ? 'none' : 'block';
+            });
+
+            categoryItems.forEach(item => {
+                item.addEventListener('click', function () {
+                    const selectedText = this.textContent;
+                    categoryToggle.querySelector('span').textContent = selectedText;
+                    categoryDropdown.style.display = 'none';
+                });
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function () {
+                categoryDropdown.style.display = 'none';
+            });
+        }
+
+        // CTA button functionality
+        const ctaButtons = document.querySelectorAll('.cta-button');
+        ctaButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                // Scroll to contact form
+                const contactSection = document.getElementById('contact');
+                const headerHeight = document.querySelector('.main-header').offsetHeight;
+
+                window.scrollTo({
+                    top: contactSection.offsetTop - headerHeight - 20,
+                    behavior: 'smooth'
+                });
+
+                // Close mobile menu if open
+                closeMobileMenu();
+
+                // Focus on first form input
+                setTimeout(() => {
+                    document.querySelector('#contactForm input').focus();
+                }, 500);
+            });
+        });
+
+        // Handle window resize
+        let resizeTimer;
+        window.addEventListener('resize', function () {
+            // Clear the previous timer
+            clearTimeout(resizeTimer);
+
+            // Set a new timer to run after resize is complete
+            resizeTimer = setTimeout(function () {
+                if (window.innerWidth > 992) {
+                    closeMobileMenu();
+                }
+
+                // Reinitialize AOS on resize
+                AOS.refresh();
+            }, 250);
+        });
+
+        // Add loading animation to service cards on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            // Set initial state for animations
+            const serviceCards = document.querySelectorAll('.service-card');
+            serviceCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+
+                // Animate in after a delay
+                setTimeout(() => {
+                    card.style.transition = 'all 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 300);
+            });
+
+            // Initialize tooltips if needed
+            const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+        });
+
+        // Fix for iOS viewport height issue
+        function setVH() {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+
+        setVH();
+        window.addEventListener('resize', setVH);
+    </script>
+</body>
+
+</html>

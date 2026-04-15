@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Pro Repair | Complete Responsive Website</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="index.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!-- Mobile Menu Backdrop -->
+    <div class="mobile-backdrop" id="mobileBackdrop"></div>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="top-bar-left">
+                    <div class="top-bar-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>Call Now: 1-800-123-4567</span>
+                    </div>
+                    <div class="top-bar-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Service Areas: Nationwide</span>
+                    </div>
+                </div>
+                <div class="top-bar-right">
+                    <div class="top-bar-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Mon-Sat: 8AM-8PM, Sun: 9AM-5PM</span>
+                    </div>
+                    <div class="top-bar-item">
+                        <i class="fas fa-truck"></i>
+                        <span>Same Day Service Available</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-container">
+                <!-- Logo -->
+                <a href="#" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-tv"></i>
+                    </div>
+                    <div class="logo-text">
+                        <div class="logo-title">TV Pro Repair</div>
+                        <div class="logo-subtitle">Premium Service</div>
+                    </div>
+                </a>
+
+                <!-- Search Bar (Desktop) -->
+                <div class="search-container d-none d-lg-block">
+                    <div class="search-box">
+                        <input type="text" class="search-input" placeholder="Search for TV parts, services...">
+                        <div class="search-category">
+                            <span>All Categories</span>
+                            <i class="fas fa-chevron-down"></i>
+                            <div class="category-dropdown">
+                                <div class="category-item">TV Screens</div>
+                                <div class="category-item">Power Boards</div>
+                                <div class="category-item">Audio Systems</div>
+                                <div class="category-item">Remote Controls</div>
+                                <div class="category-item">Mounting Kits</div>
+                                <div class="category-item">Cables & Adapters</div>
+                            </div>
+                        </div>
+                        <button class="search-button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Header Actions -->
+                <div class="header-actions">
+                    <!-- Wishlist -->
+                    <div class="action-item d-none d-md-block">
+                        <div class="action-icon">
+                            <i class="far fa-heart"></i>
+                        </div>
+                    </div>
+
+                    <!-- Cart -->
+                    <div class="action-item">
+                        <div class="action-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="badge">3</span>
+                        </div>
+                    </div>
+
+                    <!-- User Account -->
+                    <div class="user-menu d-none d-md-flex">
+                        <div class="user-avatar">JS</div>
+                        <div class="user-name">John Smith</div>
+                        <i class="fas fa-chevron-down"></i>
+                        <div class="user-dropdown">
+                            <a href="#" class="user-dropdown-item">
+                                <i class="fas fa-user"></i>
+                                <span>My Account</span>
+                            </a>
+                            <a href="#" class="user-dropdown-item">
+                                <i class="fas fa-tools"></i>
+                                <span>My Repairs</span>
+                            </a>
+                            <a href="#" class="user-dropdown-item">
+                                <i class="fas fa-receipt"></i>
+                                <span>Invoices</span>
+                            </a>
+                            <a href="#" class="user-dropdown-item">
+                                <i class="fas fa-cog"></i>
+                                <span>Settings</span>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="user-dropdown-item">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Logout</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <button class="cta-button">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Book Service</span>
+                    </button>
+
+                    <!-- Mobile Menu Toggle -->
+                    <div class="mobile-toggle" id="mobileToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-tv"></i>
+                </div>
+                <div class="logo-text">
+                    <div class="logo-title">TV Pro Repair</div>
+                    <div class="logo-subtitle">Premium Service</div>
+                </div>
+            </div>
+            <button class="mobile-close" id="mobileClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Search -->
+        <div class="mobile-search mb-4">
+            <div class="mobile-search-box">
+                <input type="text" class="mobile-search-input" placeholder="Search...">
+                <button class="mobile-search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+
+        <ul class="mobile-nav">
+            <li class="mobile-nav-item">
+                <a href="#home" class="mobile-nav-link active">
+                    <span><i class="fas fa-home me-2"></i> Home</span>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="#services" class="mobile-nav-link">
+                    <span><i class="fas fa-tools me-2"></i> Services</span>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="#brands" class="mobile-nav-link">
+                    <span><i class="fas fa-tags me-2"></i> Brands</span>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="#testimonials" class="mobile-nav-link">
+                    <span><i class="fas fa-star me-2"></i> Testimonials</span>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="#contact" class="mobile-nav-link">
+                    <span><i class="fas fa-envelope me-2"></i> Contact</span>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link">
+                    <span><i class="fas fa-info-circle me-2"></i> About Us</span>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </li>
+        </ul>
+
+        <div class="mt-4">
+            <button class="cta-button w-100">
+                <i class="fas fa-calendar-check"></i>
+                <span>Book Service Now</span>
+            </button>
+        </div>
+
+        <div class="mt-4">
+            <div class="top-bar-item">
+                <i class="fas fa-phone-alt"></i>
+                <span>Call: 1-800-123-4567</span>
+            </div>
+            <div class="top-bar-item mt-2">
+                <i class="fas fa-clock"></i>
+                <span>Mon-Sat: 8AM-8PM</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <!-- Hero Section - Minimalist -->
+    <section class="hero-section py-5" id="home">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-5 mb-lg-0" data-aos="fade-right">
+                    <div class="hero-card p-4 p-md-5 rounded-4 shadow-lg">
+                        <h1 class="display-5 fw-bold mb-4">
+                            TV Repair Made <span class="text-primary">Simple</span>
+                        </h1>
+                        <p class="text-muted mb-4">
+                            Get your TV working like new again. Our hassle-free repair service
+                            comes to you with no hidden fees.
+                        </p>
+
+                        <div class="cta-buttons">
+                            <a href="tel:5551234567" class="btn btn-primary btn-lg w-100 mb-3">
+                                <i class="fas fa-phone-alt me-2"></i> Call for Fast Service
+                            </a>
+                            <a href="#contact" class="btn btn-outline-dark btn-lg w-100">
+                                <i class="fas fa-envelope me-2"></i> Email Inquiry
+                            </a>
+                        </div>
+
+                        <div class="divider my-5">
+                            <span class="text-muted">Why Choose Us</span>
+                        </div>
+
+                        <div class="benefits">
+                            <div class="row">
+                                <div class="col-6 mb-3">
+                                    <div class="d-flex align-items-start">
+                                        <i class="fas fa-check-circle text-success me-2 mt-1"></i>
+                                        <span>Fixed Pricing</span>
+                                    </div>
+                                </div>
+                                <div class="col-6 mb-3">
+                                    <div class="d-flex align-items-start">
+                                        <i class="fas fa-check-circle text-success me-2 mt-1"></i>
+                                        <span>90-Day Warranty</span>
+                                    </div>
+                                </div>
+                                <div class="col-6 mb-3">
+                                    <div class="d-flex align-items-start">
+                                        <i class="fas fa-check-circle text-success me-2 mt-1"></i>
+                                        <span>Parts Included</span>
+                                    </div>
+                                </div>
+                                <div class="col-6 mb-3">
+                                    <div class="d-flex align-items-start">
+                                        <i class="fas fa-check-circle text-success me-2 mt-1"></i>
+                                        <span>Eco-Friendly</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="text-center position-relative">
+                        <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                            alt="TV Repair Service" class="img-fluid rounded-3 shadow">
+
+                        <div class="floating-testimonial bg-white p-4 rounded-3 shadow-lg">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer"
+                                    class="rounded-circle me-3" width="50">
+                                <div>
+                                    <h6 class="mb-0">Michael Chen</h6>
+                                    <div class="stars text-warning">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="mb-0 testimonial-text">
+                                "Fixed my 65" Samsung in under 2 hours. Professional and affordable!"
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Services Section with Pricing -->
+    <section class="services-section py-6" id="services">
+        <div class="container">
+            <div class="row mb-6">
+                <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
+                    <h2 class="display-5 fw-bold mb-3">Transparent Pricing & Services</h2>
+                    <p class="lead text-muted">No hidden fees. Know exactly what you're paying for.</p>
+                </div>
+            </div>
+
+            <div class="row g-4 align-items-center mb-5">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="service-highlight-card p-5 rounded-4 bg-primary text-white shadow-lg">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="icon-box bg-white text-primary rounded-3 p-3 me-3">
+                                <i class="fas fa-bolt fa-2x"></i>
+                            </div>
+                            <div>
+                                <h3 class="fw-bold mb-0">Most Popular Service</h3>
+                                <p class="opacity-90 mb-0">Power Supply Repair</p>
+                            </div>
+                        </div>
+                        <p class="mb-4 opacity-90">
+                            90% of TV issues are power-related. Our experts can diagnose and fix power problems quickly.
+                        </p>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                                <h4 class="display-6 fw-bold mb-0">$129</h4>
+                                <small>Includes parts & labor</small>
+                            </div>
+                            <a href="#contact" class="btn btn-light btn-lg">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="service-list ps-lg-4">
+                        <div class="service-item d-flex align-items-start mb-4">
+                            <div class="icon-box bg-light rounded-3 p-3 me-3">
+                                <i class="fas fa-volume-up text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="fw-bold mb-1">Audio Repair</h4>
+                                <p class="text-muted mb-2">Fix no sound, distorted audio, or speaker issues</p>
+                                <!-- <span class="badge bg-primary bg-opacity-10 text-primary">From $89</span> -->
+                            </div>
+                        </div>
+                        <!-- Add more service items -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pricing Table -->
+            <div class="row g-4" data-aos="fade-up">
+                <div class="col-12">
+                    <h3 class="text-center mb-4">Service Packages</h3>
+                    <div class="table-responsive">
+                        <table class="table table-hover bg-white rounded-3 overflow-hidden shadow-sm">
+                            <thead class="bg-light">
+                                <tr>
+                                    <th>Service</th>
+                                    <th>Diagnosis</th>
+                                    <th>Repair Time</th>
+                                    <th>Starting Price</th>
+                                    <th>Warranty</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="fw-bold">Screen Replacement</td>
+                                    <td><i class="fas fa-check text-success"></i> Free</td>
+                                    <td>2-4 hours</td>
+                                    <td class="fw-bold text-primary">$199</td>
+                                    <td>1 Year</td>
+                                    <td><button class="btn btn-sm btn-primary">Select</button></td>
+                                </tr>
+                                <!-- Add more rows -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> <br> <br>
+
+
+
+
+
+
+
+    <!-- Brands Section - Animated Carousel -->
+    <section class="brands-section py-6 bg-light" id="brands">
+        <div class="container">
+            <div class="text-center mb-6" data-aos="fade-up">
+                <h2 class="display-5 fw-bold mb-3">Trusted by Top Brands</h2>
+                <p class="lead text-muted mx-auto" style="max-width: 700px;">
+                    We're certified to repair all major TV manufacturers using genuine parts and manufacturer-approved
+                    techniques.
+                </p>
+            </div>
+
+            <!-- Logo Carousel -->
+            <div class="position-relative mb-6">
+                <div class="brand-carousel-wrapper overflow-hidden py-4">
+                    <div class="brand-carousel-track">
+                        <!-- First Set -->
+                        <div class="brand-logo-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg"
+                                alt="Samsung" class="img-fluid">
+                        </div>
+                        <div class="brand-logo-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/LG_logo_%282017%29.svg"
+                                alt="LG" class="img-fluid">
+                        </div>
+                        <div class="brand-logo-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Sony_logo.svg" alt="Sony"
+                                class="img-fluid">
+                        </div>
+                        <div class="brand-logo-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/TCL_logo.svg" alt="TCL"
+                                class="img-fluid">
+                        </div>
+                        <div class="brand-logo-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/VIZIO_Logo.svg" alt="Vizio"
+                                class="img-fluid">
+                        </div>
+                        <!-- Second Set (Duplicated for seamless loop) -->
+                        <div class="brand-logo-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg"
+                                alt="Samsung" class="img-fluid">
+                        </div>
+                        <div class="brand-logo-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/LG_logo_%282017%29.svg"
+                                alt="LG" class="img-fluid">
+                        </div>
+                        <div class="brand-logo-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Sony_logo.svg" alt="Sony"
+                                class="img-fluid">
+                        </div>
+                        <div class="brand-logo-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/TCL_logo.svg" alt="TCL"
+                                class="img-fluid">
+                        </div>
+                        <div class="brand-logo-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/VIZIO_Logo.svg" alt="Vizio"
+                                class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="row g-4" data-aos="fade-up">
+                <div class="col-md-3">
+                    <div class="stat-box text-center p-4">
+                        <div class="stat-number display-6 fw-bold text-primary mb-2">50+</div>
+                        <div class="stat-label">Brands Supported</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-box text-center p-4">
+                        <div class="stat-number display-6 fw-bold text-primary mb-2">10K+</div>
+                        <div class="stat-label">Parts in Stock</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-box text-center p-4">
+                        <div class="stat-number display-6 fw-bold text-primary mb-2">24/7</div>
+                        <div class="stat-label">Parts Availability</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-box text-center p-4">
+                        <div class="stat-number display-6 fw-bold text-primary mb-2">100%</div>
+                        <div class="stat-label">Genuine Parts</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> <br><br>
+
+
+
+
+
+
+    <!-- Testimonials Section - Split Quote -->
+    <section class="testimonials-section py-6" id="testimonials">
+        <div class="container">
+            <div class="row mb-6">
+                <div class="col-lg-10 mx-auto text-center" data-aos="fade-up">
+                    <h2 class="display-5 fw-bold mb-3">Why Customers Choose Us</h2>
+                    <p class="text-muted">Real feedback from our happy customers</p>
+                </div>
+            </div>
+
+            <div class="row g-0 align-items-stretch">
+                <!-- Large Quote -->
+                <div class="col-lg-8" data-aos="fade-right">
+                    <div class="big-quote bg-primary text-white p-5 h-100">
+                        <div class="quote-content">
+                            <i class="fas fa-quote-left fa-3x opacity-25 mb-4"></i>
+                            <h3 class="fw-bold mb-4">
+                                "I was ready to buy a new TV when mine stopped working. These guys saved me over $800
+                                and fixed it the same day. Professional, honest, and affordable service!"
+                            </h3>
+                            <div class="author-info">
+                                <div class="d-flex align-items-center">
+                                    <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="David Chen"
+                                        class="rounded-circle me-3" width="60">
+                                    <div>
+                                        <h4 class="fw-bold mb-0">David Chen</h4>
+                                        <p class="opacity-75 mb-0">Sony Bravia Owner</p>
+                                        <div class="rating mt-2">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Small Testimonials -->
+                <div class="col-lg-4" data-aos="fade-left">
+                    <div class="small-testimonials h-100">
+                        <!-- Testimonial 1 -->
+                        <div class="testimonial-small bg-white p-4 border-bottom">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah"
+                                    class="rounded-circle me-3" width="50">
+                                <div>
+                                    <h5 class="fw-bold mb-0">Sarah Johnson</h5>
+                                    <div class="rating">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star-half-alt text-warning"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-muted mb-0">
+                                "Fixed my LG OLED HDMI issues perfectly. Highly recommend!"
+                            </p>
+                        </div>
+
+                        <!-- Testimonial 2 -->
+                        <div class="testimonial-small bg-white p-4 border-bottom">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael"
+                                    class="rounded-circle me-3" width="50">
+                                <div>
+                                    <h5 class="fw-bold mb-0">Michael Rodriguez</h5>
+                                    <div class="rating">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-muted mb-0">
+                                "Same-day service for my Samsung QLED. Excellent work!"
+                            </p>
+                        </div>
+
+                        <!-- Testimonial 3 -->
+                        <div class="testimonial-small bg-white p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emily"
+                                    class="rounded-circle me-3" width="50">
+                                <div>
+                                    <h5 class="fw-bold mb-0">Emily Wilson</h5>
+                                    <div class="rating">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-muted mb-0">
+                                "Vizio screen repair was fast and affordable. Great service!"
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div> <br>
+
+            <!-- Trust Indicators -->
+            <!-- <div class="row mt-6" data-aos="fade-up">
+            <div class="col-lg-8 mx-auto">
+                <div class="trust-indicators bg-light rounded-4 p-4">
+                    <div class="row text-center">
+                        <div class="col-md-4">
+                            <div class="indicator-item">
+                                <i class="fas fa-user-check fa-2x text-primary mb-3"></i>
+                                <h4 class="fw-bold mb-2">347+</h4>
+                                <p class="text-muted mb-0">Happy Customers</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="indicator-item">
+                                <i class="fas fa-tv fa-2x text-success mb-3"></i>
+                                <h4 class="fw-bold mb-2">2,500+</h4>
+                                <p class="text-muted mb-0">TVs Repaired</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="indicator-item">
+                                <i class="fas fa-award fa-2x text-warning mb-3"></i>
+                                <h4 class="fw-bold mb-2">4.9/5</h4>
+                                <p class="text-muted mb-0">Satisfaction Rating</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Contact Section -->
+    <section class="contact-section section-padding" id="contact">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Contact Us</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Schedule a repair or get a free
+                diagnostic assessment</p>
+
+            <div class="row">
+                <div class="col-lg-7" data-aos="fade-right" data-aos-delay="200">
+                    <div class="contact-form">
+                        <h3 class="mb-4">Book a Service Appointment</h3>
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" class="form-control" placeholder="Your Name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="tel" class="form-control" placeholder="Phone Number" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="Email Address">
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="TV Brand & Model">
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="4"
+                                    placeholder="Describe the problem with your TV..."></textarea>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Schedule Repair</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-lg-5" data-aos="fade-left" data-aos-delay="300">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h5>Service Areas</h5>
+                                <p>Serving all major metro areas with mobile repair vans equipped with full workshop
+                                    capabilities.</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h5>Contact Numbers</h5>
+                                <p>Main: <a href="tel:+18005559876" class="text-decoration-none">1-800-555-9876</a><br>
+                                    Emergency: <a href="tel:+14155551234" class="text-decoration-none">(415)
+                                        555-1234</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h5>Service Hours</h5>
+                                <p>Mon-Fri: 7:00 AM - 9:00 PM<br>
+                                    Saturday: 8:00 AM - 6:00 PM<br>
+                                    Sunday: 9:00 AM - 4:00 PM</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div>
+                                <h5>Warranty & Guarantee</h5>
+                                <p>All repairs include a comprehensive 1-year warranty on both parts and labor. 100%
+                                    satisfaction guaranteed.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <a href="#" class="footer-logo"><i class="fas fa-tv me-2"></i>TV Pro Repair</a>
+                    <p class="mt-3 mb-4">Professional TV repair services with certified technicians, same-day service,
+                        and a comprehensive 1-year warranty on all repairs.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 mb-5 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Services</h5>
+                        <ul>
+                            <li><a href="#services">Screen Repair</a></li>
+                            <li><a href="#services">Power Systems</a></li>
+                            <li><a href="#services">Audio Repair</a></li>
+                            <li><a href="#services">Connectivity</a></li>
+                            <li><a href="#services">Board Repair</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 mb-5 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Company</h5>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#brands">Brands</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4">
+                    <div class="footer-links">
+                        <h5>Subscribe</h5>
+                        <p class="mb-3">Get maintenance tips and exclusive offers in your inbox.</p>
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Your email">
+                            <button class="btn btn-primary" type="button">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2023 TV Pro Repair. All rights reserved. | <a href="#" class="text-decoration-none">Privacy
+                        Policy</a> | <a href="#" class="text-decoration-none">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="index.js"></script>
+    <!-- <link rel="stylesheet" href="index.js"> -->
+
+    <!-- Custom JS -->
+    <!-- <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100,
+            disable: window.innerWidth < 768 // Disable animations on mobile for better performance
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu functionality
+        const mobileToggle = document.getElementById('mobileToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileClose = document.getElementById('mobileClose');
+        const mobileBackdrop = document.getElementById('mobileBackdrop');
+
+        function openMobileMenu() {
+            mobileMenu.classList.add('active');
+            mobileBackdrop.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            document.body.style.position = 'fixed';
+            document.body.style.width = '100%';
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('active');
+            mobileBackdrop.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            document.body.style.position = 'static';
+        }
+
+        mobileToggle.addEventListener('click', openMobileMenu);
+        mobileClose.addEventListener('click', closeMobileMenu);
+        mobileBackdrop.addEventListener('click', closeMobileMenu);
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        // Close mobile menu when pressing Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeMobileMenu();
+            }
+        });
+
+        // Form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = this.querySelector('input[type="text"]').value;
+            const phone = this.querySelector('input[type="tel"]').value;
+            
+            // Simple validation
+            if (!name || !phone) {
+                alert('Please fill in all required fields');
+                return;
+            }
+            
+            // Show success message
+            alert(`Thank you ${name}! Your repair request has been submitted. We will call you at ${phone} within 30 minutes to schedule your appointment.`);
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    // Close mobile menu if open
+                    closeMobileMenu();
+                    
+                    // Calculate header height for offset
+                    const headerHeight = document.querySelector('.main-header').offsetHeight;
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - headerHeight - 20,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update active nav link in mobile menu
+                    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === targetId) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        });
+
+        // Search functionality
+        const searchButtons = document.querySelectorAll('.search-button, .mobile-search-button');
+        searchButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const searchInput = this.parentElement.querySelector('input[type="text"]');
+                if (searchInput.value.trim()) {
+                    alert(`Searching for: ${searchInput.value}`);
+                    // In a real implementation, you would submit the search form here
+                } else {
+                    alert('Please enter a search term');
+                }
+            });
+        });
+
+        // Category dropdown functionality
+        const categoryToggle = document.querySelector('.search-category');
+        if (categoryToggle) {
+            const categoryDropdown = document.querySelector('.category-dropdown');
+            const categoryItems = document.querySelectorAll('.category-item');
+
+            categoryToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                categoryDropdown.style.display = categoryDropdown.style.display === 'block' ? 'none' : 'block';
+            });
+
+            categoryItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const selectedText = this.textContent;
+                    categoryToggle.querySelector('span').textContent = selectedText;
+                    categoryDropdown.style.display = 'none';
+                });
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function() {
+                categoryDropdown.style.display = 'none';
+            });
+        }
+
+        // CTA button functionality
+        const ctaButtons = document.querySelectorAll('.cta-button');
+        ctaButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Scroll to contact form
+                const contactSection = document.getElementById('contact');
+                const headerHeight = document.querySelector('.main-header').offsetHeight;
+                
+                window.scrollTo({
+                    top: contactSection.offsetTop - headerHeight - 20,
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                closeMobileMenu();
+                
+                // Focus on first form input
+                setTimeout(() => {
+                    document.querySelector('#contactForm input').focus();
+                }, 500);
+            });
+        });
+
+        // Handle window resize
+        let resizeTimer;
+        window.addEventListener('resize', function() {
+            // Clear the previous timer
+            clearTimeout(resizeTimer);
+            
+            // Set a new timer to run after resize is complete
+            resizeTimer = setTimeout(function() {
+                if (window.innerWidth > 992) {
+                    closeMobileMenu();
+                }
+                
+                // Reinitialize AOS on resize
+                AOS.refresh();
+            }, 250);
+        });
+
+        // Add loading animation to service cards on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set initial state for animations
+            const serviceCards = document.querySelectorAll('.service-card');
+            serviceCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                // Animate in after a delay
+                setTimeout(() => {
+                    card.style.transition = 'all 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 300);
+            });
+            
+            // Initialize tooltips if needed
+            const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+        });
+
+        // Fix for iOS viewport height issue
+        function setVH() {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+        
+        setVH();
+        window.addEventListener('resize', setVH);
+    </script> -->
+</body>
+
+</html>
