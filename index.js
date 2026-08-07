@@ -3,6 +3,16 @@
  */
 'use strict';
 
+/* ── Email delivery ──
+   Uses Web3Forms so form submissions land straight in the inbox with no
+   backend/server required, and no fragile confirmation-link step.
+   ONE-TIME SETUP: go to https://web3forms.com, enter nextrar1@gmail.com,
+   and it instantly shows/emails you a free access key — no link to click.
+   Paste that key into the hidden "access_key" input in index.html
+   (search for PASTE_YOUR_WEB3FORMS_ACCESS_KEY_HERE) and submissions will
+   start arriving immediately. */
+const EMAIL_ENDPOINT = 'https://api.web3forms.com/submit';
+
 /* ── AOS Init ── */
 window.addEventListener('DOMContentLoaded', () => {
   if (typeof AOS !== 'undefined') {
@@ -127,7 +137,7 @@ document.querySelectorAll('.bf-btn').forEach(btn => {
 const form = document.getElementById('contactForm');
 const fields = {
   fname:  { validate: v => v.trim().length >= 2,                          msg:'Please enter your full name.' },
-  fphone: { validate: v => /^[\d\s\+\-\(\)]{7,15}$/.test(v.trim()),      msg:'Please enter a valid phone number.' },
+  fphone: { validate: v => /^[\d\s\+\-\(\)]{7,20}$/.test(v.trim()),      msg:'Please enter a valid phone number.' },
   fbrand: { validate: v => v !== '',                                       msg:'Please select your TV brand.' },
   fissue: { validate: v => v !== '',                                       msg:'Please select the issue type.' },
 };
@@ -145,7 +155,7 @@ function setErr(cfg, show) {
   if (cfg.errEl) cfg.errEl.textContent = show ? cfg.msg : '';
 }
 
-form?.addEventListener('submit', e => {
+form?.addEventListener('submit', async e => {
   e.preventDefault();
   let ok = true;
   Object.values(fields).forEach(cfg => {
@@ -163,14 +173,39 @@ form?.addEventListener('submit', e => {
   const ld  = btn.querySelector('.btn-loading');
   btn.disabled = true; txt.style.display='none'; ld.style.display='flex';
 
-  setTimeout(() => {
-    btn.disabled=false; txt.style.display='flex'; ld.style.display='none';
-    const name = document.getElementById('fname').value.trim();
-    const phone = document.getElementById('fphone').value.trim();
+  const name  = document.getElementById('fname').value.trim();
+  const phone = document.getElementById('fphone').value.trim();
+
+  try {
+    const res = await fetch(EMAIL_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify(Object.fromEntries(new FormData(form).entries())),
+    });
+    const data = await res.json().catch(() => ({}));
+    console.log('Web3Forms response:', res.status, data); // remove once confirmed working
+
+    if (!res.ok || data.success !== true) {
+      const serverMsg = (data && data.message) || '';
+      if (/access key/i.test(serverMsg)) {
+        showToast(
+          `Setup needed: get a free key at web3forms.com and paste it into the access_key field in index.html.`,
+          'error', 9000
+        );
+      } else {
+        showToast(`Couldn't send that automatically (${serverMsg || 'server error'}) — please call or WhatsApp us at +91 70467 00376.`, 'error', 7000);
+      }
+      return;
+    }
     form.reset();
     Object.values(fields).forEach(cfg => setErr(cfg, false));
     showToast(`✅ Thank you ${name}! We'll call you at ${phone} within 30 minutes.`, 'success', 6000);
-  }, 1800);
+  } catch (err) {
+    console.error('Web3Forms request failed:', err); // remove once confirmed working
+    showToast(`Couldn't reach the email service — please call or WhatsApp us at +91 70467 00376.`, 'error', 7000);
+  } finally {
+    btn.disabled = false; txt.style.display = 'flex'; ld.style.display = 'none';
+  }
 });
 
 /* ── Toast system ── */
@@ -194,13 +229,32 @@ setVH();
 window.addEventListener('resize', setVH, { passive:true });
 
 /* ── Newsletter ── */
-document.querySelector('.nl-form button')?.addEventListener('click', () => {
-  const inp = document.querySelector('.nl-form input');
+document.getElementById('nlSubmit')?.addEventListener('click', async function () {
+  const inp = document.getElementById('nlEmail');
   const email = inp?.value?.trim();
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     showToast('Please enter a valid email address.', 'error');
     inp?.focus(); return;
   }
-  showToast('🎉 Subscribed! Expect TV tips and offers soon.', 'success');
-  if (inp) inp.value = '';
+  this.disabled = true;
+  try {
+    const accessKey = document.querySelector('input[name="access_key"]')?.value || '';
+    const res = await fetch(EMAIL_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        access_key: accessKey,
+        email: email,
+        subject: 'New Newsletter Signup — TV Pro Repair',
+      }),
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok || data.success !== true) throw new Error(data.message || 'Signup failed');
+    showToast('🎉 Subscribed! Expect TV tips and offers soon.', 'success');
+    if (inp) inp.value = '';
+  } catch (err) {
+    showToast('Signup failed — please try again in a moment.', 'error');
+  } finally {
+    this.disabled = false;
+  }
 });
